@@ -229,5 +229,86 @@ for(var i=0; i<10; i++){
 }
 
 //制作一个问答程式
+var questions = [
+    {
+        prompt:"What is the color of banana?\n(a)Red\n(b)green\n(c)yellow",
+        answer:"c"
+    },
+    {
+        prompt:"What is the color of straberry?\n(a)Red\n(b)green\n(c)yellow",
+        answer:"a"
+    },
+    {
+        prompt:"What is the color of kwid?\n(a)Red\n(b)green\n(c)yellow",
+        answer:"b"
+    },
+]
+var score = 0;
+for (var i=0; i < questions.length; i++){
+    var input = prompt (questions[i].prompt);
+    if(input==questions[i].answer){
+        score++;
+        alert("Right answer!");
+    }
+    else{
+        alert("Wrong answer!");
+    }
+}
+alert("Right answer numbers:" + score + ".");
+
+//二维阵列、巢状回圈 2D array, nested loop
+var number = [
+    [1,2,3], 
+    [4,5,6], 
+    [7,8,9],
+    [0]
+]
+document.write(number[0][0]);
+
+for(var i = 0; i<4; i++){
+    for(var j=0; j<3; j++){
+        document.write("i:" + i + " ,j:" +j);
+        document.write("<br/>");
+    }
+}
+//使用nested loop取2D array中的每一个值
+var number = [
+    [1,2,3], 
+    [4,5,6], 
+    [7,8,9],
+    [0]
+]
+
+for (var i=0; i<number.length; i++){
+    for (var j=0; j<number[i].length; j++){
+        document.write(number[i][j]);
+    }
+    document.write("<br/>");
+}
+
+//class
+class Phone {
+    constructor(number, year, is_waterproof){
+        this.number = number;
+        this.year = year;
+        this.is_waterproof = is_waterproof;
+    }
+    phone_age(){
+        return 2021 - this.year;
+    }
+}
+var phone1 = new Phone("123", 2020, false);
+var phone2 = new Phone("456", 2090, false);
+document.write(phone2.phone_age());
+
+//如何取得html元素
+var h1 = document.getElementById("header");
+h1.innerText = "Goodbye world";
+h1.style.backgroundColor = "red";
+h1.style.color ="blue";
+var link = document.getElementById("link");
+link.href = "https://www.google.com/search?q=hello&source=hp&ei=1oFhY4j_NIiVkgWlhY6YDA&iflsig=AJiK0e8AAAAAY2GP5hiCqG4efXnsBdAX2kj54ybqc497&ved=0ahUKEwiIwsO76Y37AhWIiqQKHaWCA8MQ4dUDCAg&uact=5&oq=hello&gs_lcp=Cgdnd3Mtd2l6EAMyCwguEIAEEMcBENEDMgsILhCABBDHARCvATIICC4QgAQQ1AIyCAguEIAEENQCMgUIABCABDIFCAAQgAQyCwguEIAEEMcBEK8BMgUILhCABDIFCAAQgAQyBQgAEIAEOg4ILhCABBDHARDRAxDUAlCyC1iAEmDNE2gBcAB4AIABa4gBpQOSAQMzLjKYAQCgAQGwAQA&sclient=gws-wiz";
+
+//event listener 事件监听器 （w3c js event list
 
 
